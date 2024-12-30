@@ -104,6 +104,8 @@ SCSFExport scsf_DepthSum(SCStudyInterfaceRef sc)
 				BidsSum += sc.GetBidMarketDepthStackPullValueAtPrice(sc.Bid - (float)Level * sc.TickSize);
 				AsksSum += sc.GetAskMarketDepthStackPullValueAtPrice(sc.Ask + (float)Level * sc.TickSize);
 			}
+			if (BidsSum < 0) BidsSum = 0;
+			if (AsksSum < 0) AsksSum = 0;
 		}
 	}
 
